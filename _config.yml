@@ -1,13 +1,21 @@
 # Site settings
-title: 面朝大海，春暖花开
-email: jingyu3hao@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-    树林林的小空间
-    独怜忧草涧边生，上有黄鹂深树鸣
-baseurl: "/site/" # our awesome titlethe subpath of your site, e.g. /blog/
-url: "http://blueskey.github.io" # the base hostname & protocol for your site
-twitter_username: liuju
-github_username:  blueskey
+title: 树林林的小空间
+subtitle: "hello world"
+email: your-email@domain.com
+description:"我就是我啊"
+baseurl: "/site/"
+url:"http://blueskey.github.io" 
+twitter_username: "liuju"
+github_username:  "blueskey"
+instagram_username: "rowanoulton"
 
 # Build settings
 markdown: kramdown
+permalink: pretty
+
+# Pagination
+paginate: 5
+
+# Sass
+sass:
+    style: :compressed
