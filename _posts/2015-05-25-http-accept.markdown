@@ -14,7 +14,9 @@ Accept首部为客户端提供了一种将其喜好和能力告知服务器的�
 
     Accept-Language: 能够发送哪些语言
 
-    质量值：允许客户端为每种偏好类别列出多种选项，并为每种偏好选项关联一个优先次序。
+    质量值：允许客户端为每种偏好类别列出多种选项，并为每种偏好选项关联一个优先次序。如：
 
-    
+        Accept-Encoding: compress;q=0.5, gzip;q=1.0　　　　　　//按顺序支持 gzip , compress
+
+        Accept-Encoding: gzip;q=1.0, identity; q=0.5, *;q=0       // 按顺序支持 gzip , identity 
 
