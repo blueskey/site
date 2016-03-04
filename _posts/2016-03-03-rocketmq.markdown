@@ -6,7 +6,7 @@ categories: http
 ---
 项目主页:[https://github.com/alibaba/RocketMQ](https://github.com/alibaba/RocketMQ)
 
-~~~ java
+```
  Administrator@PC-20150729ADE7 /cygdrive/g/work/dev/rocketMQ/alibaba-rocketmq-3.2.6/bin
 
   
@@ -33,8 +33,8 @@ $ nohup sh mqnamesrv &
 [2] 7944  
   
 [1] Exit 127 nohup sh mqbroker
-~~~
 
+```
 因为此处是在windows环境使用cygwin工具（不是真的linux环境），所以会有问题
 
 windows下：
@@ -58,7 +58,8 @@ windows下：
  **注：不能直接双击mqbroker.exe，会报错，如下：**
 
  如果报
-~~~ java
+ 
+```
  com.alibaba.rocketmq.client.exception.MQClientException: No route info of this topic, PushTopic
 
  See https://github.com/alibaba/RocketMQ/issues/264 for further details.  
@@ -66,7 +67,8 @@ at com.alibaba.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendDefaultIm
 at com.alibaba.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:972)  
 at com.alibaba.rocketmq.client.producer.DefaultMQProducer.send(DefaultMQProducer.java:109)  
 at com.ruishenh.rocketmq.example.Producer.main(Producer.java:43)
-~~~
+```
+
  这是因为启动broker需要 mqbroker.exe -n localhost:9876，而不是双击 mqbroker.exe
 
  主从配置：
@@ -74,30 +76,30 @@ at com.ruishenh.rocketmq.example.Producer.main(Producer.java:43)
  Master与Slave通过指定相同的brokerName参数来配对，Master的BrokerId必须是0，Slave的BrokerId必须是大于0的数
 
  主（主要看配置文件设置 brokerId=0 ）： mqbroker.exe -n localhost:9876  -c ..\conf\2m-2s-async\broker-a.properties
-~~~ java
-brokerClusterName=DefaultCluster
 
+```
+brokerClusterName=DefaultCluster
 brokerName=broker-a  
 brokerId=0   
 deleteWhen=04  
 fileReservedTime=48  
 brokerRole=ASYNC_MASTER
-
 flushDiskType=ASYNC_FLUSH
-~~~
+```
+
  从： mqbroker.exe -n localhost:9876  -c ..\conf\2m-2s-async\ broker-a-s .properties
 
 broker-a-s .properties:
-~~~ java
+
+```
 brokerClusterName=DefaultCluster  
 brokerName=broker-a  
 brokerId=1  
 deleteWhen=04  
 fileReservedTime=48  
 brokerRole=SLAVE
-
 flushDiskType=ASYNC_FLUSH
-~~~
+```
 
  看conf目录下，几种配置方式 ：
 
@@ -151,9 +153,9 @@ public class Consumer {
 }
 {% endhighlight %}
 
-~~~ java
+``` java
 
- package rocketmq;
+package rocketmq;
 
 import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 import com.alibaba.rocketmq.client.producer.SendResult;
@@ -203,11 +205,11 @@ public class Producer {
         }
     }
 }
-~~~
+```
  先启动Consumer ，然后启动  Producer ，查看 Consumer输出：
-~~~ java
+```
 MessageExt [queueId=0, storeSize=142, queueOffset=14, sysFlag=0, bornTimestamp=1456824370936, bornHost=/172.29.7.77:60084, storeTimestamp=1456824370949, storeHost=/172.29.7.77:10911, msgId=AC1D074D00002A9F000000000000175E, commitLogOffset=5982, bodyCRC=753746584, reconsumeTimes=0, preparedTransactionOffset=0, toString()=Message [topic=PushTopic, flag=0, properties={MIN_OFFSET=0, MAX_OFFSET=15, KEYS=1, WAIT=true, TAGS=push1}, body=14]]
-~~~
+```
 
 [0]: https://github.com/alibaba/RocketMQ
 [1]: ./alibaba-rocketmq-3.2.6.tar.gz
