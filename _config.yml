@@ -4,14 +4,15 @@ subtitle: "hello world"
 email: "jingyu3hao@gmail.com"
 description: "我就是我啊"
 baseurl: "/site"
-#url: "http://blueskey.github.io" 
-url: "http://localhost:4000"
+url: "http://blueskey.github.io" 
+#url: "http://localhost:4000"
 
 twitter_username: "liuju"
 github_username:  "blueskey"
 instagram_username: "rowanoulton"
 
-highlighter: pygemnts
+#highlighter: pygemnts
+rouge: pygemnts
 
 #pygments: true
 
