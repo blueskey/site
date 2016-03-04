@@ -20,3 +20,4 @@ Accept首部为客户端提供了一种将其喜好和能力告知服务器的�
 
         Accept-Encoding: gzip;q=1.0, identity; q=0.5, *;q=0       // 按顺序支持 gzip , identity 
 
+<a href="{{site.baseurl}}/index.html">Go back</a>

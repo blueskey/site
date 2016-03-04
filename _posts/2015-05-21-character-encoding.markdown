@@ -31,3 +31,4 @@ html文件呢？幸运的是，所有的编码在 32-127之间都是一样的，
 参考链接：
 <a href='http://www.joelonsoftware.com/articles/Unicode.html'>http://www.joelonsoftware.com/articles/Unicode.html</a>
 <a href='http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html'>http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a>
+<a href="{{site.baseurl}}/index.html">Go back</a>
