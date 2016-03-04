@@ -12,7 +12,7 @@ github_username:  "blueskey"
 instagram_username: "rowanoulton"
 
 #highlighter: pygemnts
-highlighter: rouge
+rouge: pygemnts
 
 #encoding: utf-8
 
