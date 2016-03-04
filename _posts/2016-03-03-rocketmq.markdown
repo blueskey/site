@@ -104,7 +104,7 @@ flushDiskType=ASYNC_FLUSH
 <img src='{{ "/img/package.png" | prepend:site.baseurl }}'/>
 
  
-~~~ java
+{% highlight java %}
 package rocketmq;  
   
 import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;  
@@ -149,8 +149,10 @@ public class Consumer {
         }  
     }  
 }
-~~~    
+{% endhighlight %}
+
 ~~~ java
+
  package rocketmq;
 
 import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
