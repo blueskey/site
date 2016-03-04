@@ -101,8 +101,7 @@ flushDiskType=ASYNC_FLUSH
 
  看conf目录下，几种配置方式 ：
 
-<img src='{{ "/img/package.png" | prepend:site.baseurl }}'/>
-
+ ![](img/package.png)
  
 ~~~ java
 package rocketmq;  
