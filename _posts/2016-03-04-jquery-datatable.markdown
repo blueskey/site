@@ -4,11 +4,12 @@ title:  "jquery datatable 使用"
 date:   2016-03-04 16:35:00
 categories: datatable
 ---
-** jquery datatable 使用
+jquery datatable 使用
 
 统一定义：
 注："pagingType": "input",需要用到自定义的插件
 
+~~~ javascript
 initTable=(function(tableId,params,afterInitFunction) {
     var configs = {
         "bProcessing": true, // 是否显示取数据时的那个等待提示
@@ -53,9 +54,11 @@ initTable=(function(tableId,params,afterInitFunction) {
     var conf = $.extend(configs, params);
     return $('#'+tableId).DataTable(conf);
 });
+~~~
 
 调用 initTable：
 
+~~~ javascript
 var goodsTable =initTable("goodsTable", {
     "aoColumns": [
         {
@@ -87,11 +90,12 @@ var goodsTable =initTable("goodsTable", {
         return nRow;
     }
 });
+~~~
 
 fnRowCallback：行回调，可用于给表格的每一行加样式等，见上图。
 
 createdRow：单元格处理，可用于给单元格加样式等，如下：
-
+~~~ javascript
 "createdRow": function ( row, data, index ) {
     if ( data['isRecommend'] =="0" ) {
         $('td', row).eq(8).addClass("un-recommend-goods");
@@ -99,22 +103,27 @@ createdRow：单元格处理，可用于给单元格加样式等，如下：
         $('td', row).eq(8).addClass("recommend-goods");
     }
 },
+~~~
 
 当需要在表格渲染完做一些事情时，可用如下方法：                  
 
+~~~ javascript
 goodsTable.on( 'draw', function () {
     var pageInfo =goodsTable.page.info();
     $("#totalRecords").html("记录数："+pageInfo.recordsTotal);
 });
+~~~
 
 给表格行/单元格添加事件：
 
+~~~ javascript
 $('#transferDetailTable tbody').on('click', 'tr', function (e) {
     var ifCanAudit = $("#transferSubmit").attr("disabled");
     if(ifCanAudit!="disabled"){
         showTransferWindow($(this).find("td:eq(0)").find("input:eq(0)").val());
     }
 });
+~~~
 
 自定义分页插件：
 
