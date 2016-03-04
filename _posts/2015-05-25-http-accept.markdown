@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "http accept header"
+title: "http 头 accept header"
 date: 2015-05-25 23:05:45 
 categories: http
 ---
