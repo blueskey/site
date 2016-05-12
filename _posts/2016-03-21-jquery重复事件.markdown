@@ -3,6 +3,7 @@ layout: post
 title:  "jquery重复点击事件"
 date:   2016-03-21 09:35:52
 categories: jquery
+tags: jquery
 ---
 通常，给元素添加绑定事件（以“click”事件为例）：
 
@@ -17,7 +18,7 @@ $('#thirdCategoryTable tbody').on( 'click', 'tr td.category-name-td', function (
 一般不会出现重复绑定现象（点击一下，代码却执行了n遍，而且随着点击次数的增加而增加），
 但有时候却会出现这种情况，可能后果很严重！
 
-解决办法：在添加之前，注销原来的点击事件 unbind("click") 。
+**解决办法：**在添加之前，注销原来的点击事件 unbind("click") 。
 
 ```javascript
 $('#thirdCategoryTable tbody').unbind("click").on( 'click', 'tr td.category-name-td', function () {
