@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "jquery重复点击事件"
+date:   2016-03-21 09:35:52
+categories: jquery
+tags: jquery
+---
+通常，给元素添加绑定事件（以“click”事件为例）：
+
+```javascript
+$('#thirdCategoryTable tbody').on( 'click', 'tr td.category-name-td', function () {
+    addTrSelect(thirdCategoryTable, $(this).parent());
+} );
+```
+
+绑定事件到元素上与文档流有关.如果每次元素都是重新用 JS 动态生态,而后又用 JS 给刚生成的 DOM 元素绑定事件,通常不会出现重复绑定的 bug.但如果文档流是服务器发送的,而且没有进行过重新生成的操作,那么以后所有的绑定操作都会在它身上起作用,通过  JS 特有的链式操作一一被执行,直到链式操作结束,或冒泡事件结束,或显示的遇到 return false; 为止,而且同时执行效果取决于运行时序.
+
+一般不会出现重复绑定现象（点击一下，代码却执行了n遍，而且随着点击次数的增加而增加），
+但有时候却会出现这种情况，可能后果很严重！
+
+**解决办法：**在添加之前，注销原来的点击事件 unbind("click") 。
+
+```javascript
+$('#thirdCategoryTable tbody').unbind("click").on( 'click', 'tr td.category-name-td', function () {
+    addTrSelect(thirdCategoryTable, $(this).parent());
+} );
+```
+
+
+或采用Dom元素中加onclick事件
