@@ -6,17 +6,16 @@ categories: hadoop mapreduce windows idea
 ---
 
 在虚拟机上搭建hadoop，并启动（这里采用伪分步式。）
-```
+
 hdfs-site.xml：
-
+```
 <configuration>
-
 <property>
         <name>dfs.replication</name>
         <value>1</value>
     </property>
 
- <property>
+    <property>
         <name>dfs.name.dir</name>
         <value>/usr/local/hadoop/hdfs/name</value>
     </property>
@@ -24,11 +23,11 @@ hdfs-site.xml：
         <name>dfs.data.dir</name>
         <value>/usr/local/hadoop/hdfs/data</value>
     </property>
-<property>
-    <!-- 是否对DFS中的文件进行权限控制(测试中一般用false)-->
-    <name>dfs.permissions</name>
-    <value>false</value>
-</property>
+    <property>
+        <!-- 是否对DFS中的文件进行权限控制(测试中一般用false)-->
+        <name>dfs.permissions</name>
+        <value>false</value>
+    </property>
 </configuration>
 ```
 core-site.xml：
